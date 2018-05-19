@@ -12,8 +12,12 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "ajv": "^6.5.0",
+    "axios": "^0.18.0",
     "bootstrap": "^4.1.0",
+    "bootstrap-vue": "^2.0.0-rc.10",
     "jquery": "^3.3.1",
+    "matter-js": "^0.14.1",
     "mini-toastr": "^0.8.1",
     "popper.js": "^1.14.3",
     "uiv": "^0.21.4",
