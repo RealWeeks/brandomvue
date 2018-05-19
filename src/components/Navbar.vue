@@ -28,7 +28,7 @@
           </template>
           <b-dropdown-item v-b-modal.signIn href="#">Sign In/Up</b-dropdown-item>
           <b-dropdown-item href="#">Profile</b-dropdown-item>
-          <b-dropdown-item href="#">Signout</b-dropdown-item>
+          <b-dropdown-item href="#">Signout{{user}}</b-dropdown-item>
         </b-nav-item-dropdown>
 
         <b-nav-item-dropdown v-else right>
@@ -37,6 +37,8 @@
             <em>{{user.email}}</em>
           </template>
           <!-- <b-dropdown-item href="#">Profile</b-dropdown-item> -->
+          <b-dropdown-item href="#"><router-link :to="{ name: 'Submission', params: { id: user.id }}">Submission</router-link></b-dropdown-item>
+
           <b-dropdown-item @click="handleSignOut">Signout</b-dropdown-item>
         </b-nav-item-dropdown>
 
@@ -81,7 +83,7 @@ export default {
   mixins:[GlobalMixin],
   methods:{
     handleSignOut(){
-      debugger
+      // debugger
       axios({
         method: 'delete',
         url: `/sign-out/${this.user.id}`,
@@ -104,6 +106,7 @@ export default {
       })
     },
     addUser(user) {
+      debugger
       this.$store.dispatch('addUser', user)
     },
     handleSignUp(){
@@ -156,6 +159,8 @@ export default {
             message: 'Signed In',
           })
           this.$refs.SignInModal.hide()
+          debugger
+          // this.usserSignedIn
         }else{
           return Promise.reject(err)
         }
@@ -167,6 +172,7 @@ export default {
   },
   computed:{
     user(){
+      // debugger;
       return this.$store.state.user;
     }
   },
@@ -181,3 +187,6 @@ export default {
   }
 }
 </script>
+<style scoped>
+
+</style>
