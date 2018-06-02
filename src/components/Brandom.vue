@@ -1,7 +1,8 @@
 <template>
   <div>
-    <navbar-component></navbar-component>
-    <placeholder></placeholder>
+    <navbar-component/>
+    <!-- <placeholder @emitSomething="handleEmit" :msg="msg"/> -->
+    <splash-header/>
 
   </div>
 </template>
@@ -9,16 +10,23 @@
 <script>
 import Navbar from './Navbar'
 import Placeholder from './Placeholder'
+import splashHeader from './splash-header'
 
 export default {
   name: 'Brandom',
   components: {
     'navbar-component': Navbar,
-    'placeholder' : Placeholder
+    'placeholder' : Placeholder,
+    'splash-header' : splashHeader
+  },
+  methods:{
+    handleEmit(param1){
+      console.log(param1);
+    }
   },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Hello World'
     }
   }
 }

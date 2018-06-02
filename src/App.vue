@@ -1,6 +1,8 @@
 <template>
     <div id="app">
-      <router-view/>
+      <router-view
+      class="main-container"
+      />
     </div>
 </template>
 <script>
@@ -11,4 +13,9 @@ export default {
 </script>
 
 <style>
+body,
+html,
+.main-container{
+  min-height:100%
+}
 </style>
