@@ -11,6 +11,7 @@ import BootstrapVue from 'bootstrap-vue';
 import {store} from './store.js'
 import VueNotifications from 'vue-notifications'
 import miniToastr from 'mini-toastr'
+import VueRouter from 'vue-router'
 
 const toastTypes = {
   success: 'success',
@@ -35,6 +36,7 @@ const options = {
 
 Vue.use(BootstrapVue);
 Vue.use(Vuex);
+Vue.use(VueRouter)
 Vue.use(VueNotifications, options);
 // Vue.use(uiv)
 

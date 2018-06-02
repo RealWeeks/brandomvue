@@ -8,6 +8,29 @@ export default {
       handleError(err){
         debugger;
       },
+      // $axios(type, path, params, token){
+      //
+      //   axios({
+      //     method: 'delete',
+      //     url: `/sign-out/${this.user.id}`,
+      //     baseURL: "http://localhost:4741",
+      //     headers: {'Authorization': `Token token=${this.user.token}`}
+      //   })
+      //   .then((response)=>{
+      //     if (response.status === 204) {
+      //       this.addUser({})
+      //       this.showInfoMessage({
+      //         title: 'Signed Out',
+      //         message: 'Out have been signed out.',
+      //       })
+      //     }else{
+      //       return Promise.reject(err)
+      //     }
+      //   })
+      //   .catch((err)=>{
+      //     this.handleError(err)
+      //   })
+      // }
       //...
     },
     notifications: {

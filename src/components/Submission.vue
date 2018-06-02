@@ -1,7 +1,7 @@
 <template>
   <div>
     <navbar-component></navbar-component>
-    test
+    testing
   </div>
 </template>
 

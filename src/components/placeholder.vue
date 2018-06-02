@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class='matter-holder'>test
+    <div class='matter-holder'>test placeholder
     </div>
   </div>
 </template>
