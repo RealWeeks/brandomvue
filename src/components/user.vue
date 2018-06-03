@@ -20,16 +20,28 @@
 
 <script>
 import Navbar from './Navbar'
+import submitSteps from './submit-steps'
 
 export default {
   name: 'User',
   components: {
     'navbar-component': Navbar,
+    'submit-steps' : submitSteps
 
+  },
+  methods:{
+    revealSubmission(){
+      console.log('TITTY');
+      this.showForm = !this.showForm
+    },
+    // changeString(){
+    //   this.newMessage = this.msg.toUpperCase()
+    // },
   },
   data () {
     return {
-      url:'https://cdn.pixabay.com/photo/2016/03/09/15/10/man-1246508_1280.jpg'
+      showForm: false,
+      url:''
     }
   }
 }
