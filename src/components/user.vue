@@ -4,6 +4,11 @@
     <div class="css-container">
       <div class="user-img">
         <img :src="url"/>
+        <div class="submit-area">
+          <b-button @click="revealSubmission" size="small">
+                Submit
+            </b-button>
+        </div>
       </div>
       <div class="submit">ttest</div>
       <div class="sidebar">
@@ -16,6 +21,7 @@
       <div class="rightbar">
         <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/HDRI_Sample_Scene_Balls_%28JPEG-HDR%29.jpg"/>
         <img src="https://pixnio.com/free-images/flora-plants/seeds/kiche-maya-man-from-solola-proudly-shows-a-sample-of-his-snow-pea-harvest-725x544.jpg"/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Fujifilm_X100_sample_02.jpg/1599px-Fujifilm_X100_sample_02.jpg"/>
       </div>
     </div>
   </div>
@@ -37,14 +43,11 @@ export default {
       console.log('TITTY');
       this.showForm = !this.showForm
     },
-    // changeString(){
-    //   this.newMessage = this.msg.toUpperCase()
-    // },
   },
   data () {
     return {
       showForm: false,
-      url:''
+      url:'https://cdn.pixabay.com/photo/2016/03/09/15/10/man-1246508_1280.jpg'
     }
   }
 }
@@ -70,10 +73,13 @@ export default {
   /* background-color: blue; */
 }
 .user-img img{
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  max-height: 90%;
   display: flex;
   justify-content: flex-start;
+}
+.submit-area .btn{
+  width: 100%
 }
 /* .text{
   grid-area: foo;
@@ -93,6 +99,7 @@ export default {
 .rightbar{
   grid-area: rightbar;
   background-color:purple;
+  overflow: scroll;
 }
 .rightbar img{
   max-width: 100%;
