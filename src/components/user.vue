@@ -1,7 +1,12 @@
 <template>
-  <div>
-      <navbar-component/>
-<h1> TEST </h1>
+  <div style="height: 100%">
+    <navbar-component/>
+    <div class="css-container">
+      <div class="header">test</div>
+      <div class="text">test</div>
+      <div class="submit">ttest</div>
+      <div class="sidebar">In a sidebar</div>
+    </div>
   </div>
 </template>
 
@@ -21,8 +26,35 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.css-container{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% auto auto auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "sidebar header header header"
+    "sidebar header header header"
+    "sidebar foo foo foo"
+    "sidebar submit submit submit"
+    "sidebar submit submit submit"
+}
+.header{
+  grid-area: header;
+  background-color: blue;
+}
+.text{
+  grid-area: foo;
+  background-color: red;
+}
+.submit{
+  grid-area: submit;
+  background-color: green;
+}
+.sidebar{
+  grid-area: sidebar;
+  background-color:orange;
+}
 
 </style>
