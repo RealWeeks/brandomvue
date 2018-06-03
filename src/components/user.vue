@@ -13,7 +13,10 @@
           <li>Linkedin</li>
         </ul>
       </div>
-      <div class="rightbar">In a rightbar</div>
+      <div class="rightbar">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/HDRI_Sample_Scene_Balls_%28JPEG-HDR%29.jpg"/>
+        <img src="https://pixnio.com/free-images/flora-plants/seeds/kiche-maya-man-from-solola-proudly-shows-a-sample-of-his-snow-pea-harvest-725x544.jpg"/>
+      </div>
     </div>
   </div>
 </template>
@@ -90,6 +93,10 @@ export default {
 .rightbar{
   grid-area: rightbar;
   background-color:purple;
+}
+.rightbar img{
+  max-width: 100%;
+  max-height: 100%;
 }
 
 </style>
