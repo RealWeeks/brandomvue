@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Brandom from '@/components/Brandom'
 import Submission from '@/components/Submission'
+import User from '@/components/User'
 
 Vue.use(Router)
 
@@ -25,6 +26,11 @@ export default new Router({
      //     name:'Submission'
      //   }
      // ]
+   },
+   {
+     path: '/user',
+     name: 'user',
+     component: User,
    },
  ],
  mode: 'history'
