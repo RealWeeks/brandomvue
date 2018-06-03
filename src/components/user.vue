@@ -2,10 +2,18 @@
   <div style="height: 100%">
     <navbar-component/>
     <div class="css-container">
-      <div class="header">test</div>
-      <div class="text">test</div>
+      <div class="user-img">
+        <img :src="url"/>
+      </div>
       <div class="submit">ttest</div>
-      <div class="sidebar">In a sidebar</div>
+      <div class="sidebar">
+        <!-- <h2></h2> -->
+        <h3>Contact Details</h3>
+        <ul>
+          <li>Linkedin</li>
+        </ul>
+      </div>
+      <div class="rightbar">In a rightbar</div>
     </div>
   </div>
 </template>
@@ -21,6 +29,7 @@ export default {
   },
   data () {
     return {
+      url:'https://cdn.pixabay.com/photo/2016/03/09/15/10/man-1246508_1280.jpg'
     }
   }
 }
@@ -31,30 +40,44 @@ export default {
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: 20% auto auto auto;
-  grid-template-rows: auto;
+  grid-template-columns: 20% auto auto 20%;
+  grid-template-rows: 20% 20% 20% 20% 700px;
+  /* grid-gap: 2px; */
   grid-template-areas:
-    "sidebar header header header"
-    "sidebar header header header"
-    "sidebar foo foo foo"
-    "sidebar submit submit submit"
+    "sidebar user user rightbar"
+    "sidebar user user rightbar"
+    "sidebar user user rightbar"
+    "sidebar user user rightbar"
     "sidebar submit submit submit"
 }
-.header{
-  grid-area: header;
-  background-color: blue;
+.user-img{
+  grid-area: user;
+  /* background-color: blue; */
 }
-.text{
+.user-img img{
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+/* .text{
   grid-area: foo;
   background-color: red;
-}
+} */
 .submit{
   grid-area: submit;
   background-color: green;
 }
 .sidebar{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
   grid-area: sidebar;
   background-color:orange;
+}
+.rightbar{
+  grid-area: rightbar;
+  background-color:purple;
 }
 
 </style>
