@@ -3,13 +3,15 @@
     <navbar-component/>
     <div class="css-container">
       <div class="user-img">
-        <img :src="url"/>
+        <img v-if="!showForm" :src="url"/>
         <div class="submit-area">
           <b-button @click="revealSubmission" size="small">
                 Submit
             </b-button>
         </div>
+        <submit-steps v-if="showForm"/>
       </div>
+
       <div class="submit">ttest</div>
       <div class="sidebar">
         <!-- <h2></h2> -->
@@ -43,6 +45,7 @@ export default {
     revealSubmission(){
       console.log('TITTY');
       this.showForm = !this.showForm
+
     },
   },
   data () {
