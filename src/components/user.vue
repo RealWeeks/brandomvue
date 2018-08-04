@@ -3,7 +3,9 @@
     <navbar-component/>
     <div class="css-container">
       <div class="user-img">
-
+        <div class="progress">
+          <b-progress :value="value" class="w-100" height="2rem"></b-progress>
+        </div>
         <b-card no-body>
           <b-tabs card v-model="tabIndex">
             <b-tab title="Tab 1" :title-link-class="linkClass(0)">
@@ -21,6 +23,9 @@
             <b-tab title="Tab 4" :title-link-class="linkClass(3)">
               <step-four-component @addProjectname="addProjectname"/>
             </b-tab>
+            <!-- <b-tab title="Tab 5" :title-link-class="linkClass(5)">
+              <slot />
+            </b-tab> -->
           </b-tabs>
         </b-card>
       </div>
@@ -48,6 +53,7 @@ import stepOne from './submit-stages/step-one'
 import stepTwo from './submit-stages/step-two'
 import stepThree from './submit-stages/step-three'
 import stepFour from './submit-stages/step-four'
+// import slot from './submit-stages/slot'
 
 
 export default {
@@ -60,6 +66,7 @@ export default {
     'step-two-component' : stepTwo,
     'step-three-component' : stepThree,
     'step-four-component' : stepFour,
+    // 'slot' : slot,
 
   },
   methods:{
@@ -76,18 +83,28 @@ export default {
     },
     addBrand(item){
       this.$set(this.allSteps, 'brand', item)
+      this.tabIndex = 1
+      this.value = 25
     },
     addBrandAdditional(item){
       this.$set(this.allSteps, 'second', item)
+      this.tabIndex = 1
+      this.value = 25
     },
     addMockup(item){
       this.$set(this.allSteps, 'mockup', item)
+      this.tabIndex = 2
+      this.value = 50
     },
     addMedium(item){
       this.$set(this.allSteps, 'medium', item)
+      this.tabIndex = 3
+      this.value = 75
     },
     addProjectname(name){
       this.$set(this.allSteps, 'name', name)
+      this.tabIndex = 4
+      this.value = 100
     }
   },
   data () {
@@ -96,12 +113,20 @@ export default {
       url:'https://cdn.pixabay.com/photo/2016/03/09/15/10/man-1246508_1280.jpg',
       tabIndex: 0,
       allSteps:{},
+      animate: true,
+      value:0,
     }
   }
 }
 </script>
 
 <style scoped>
+/* .progress-bar{
+  display: block;
+}
+.progress{
+  display: block;
+} */
 .css-container{
   height: 100%;
   width: 100%;
