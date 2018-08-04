@@ -18,10 +18,13 @@
               <step-one-component/>
             </b-tab>
             <b-tab title="Tab 2" :title-link-class="linkClass(1)">
-              Tab Contents 2
+              <step-two-component/>
             </b-tab>
             <b-tab title="Tab 3" :title-link-class="linkClass(2)">
-              Tab Contents 3
+              <step-three-component/>
+            </b-tab>
+            <b-tab title="Tab 4" :title-link-class="linkClass(3)">
+              <step-four-component/>
             </b-tab>
           </b-tabs>
         </b-card>
@@ -52,6 +55,10 @@ import Navbar from './Navbar'
 import submitSteps from './submit-steps'
 import sidebar from './sidebar'
 import stepOne from './submit-stages/step-one'
+import stepTwo from './submit-stages/step-two'
+import stepThree from './submit-stages/step-three'
+import stepFour from './submit-stages/step-four'
+
 
 export default {
   name: 'User',
@@ -60,6 +67,9 @@ export default {
     'submit-steps' : submitSteps,
     'sidebar-component' : sidebar,
     'step-one-component' : stepOne,
+    'step-two-component' : stepTwo,
+    'step-three-component' : stepThree,
+    'step-four-component' : stepFour,
 
   },
   methods:{
