@@ -33,8 +33,10 @@ export default {
   components: {
     'Multiselect': Multiselect,
   },
-  created(){
-    // debugger;
+  watch:{
+    selected(item){
+      this.$emit('addMedium', item)
+    }
   },
   methods:{
     mockupChoice(choice){

@@ -15,12 +15,6 @@
         v-model="selected"
         :options="options">
       </multiselect>
-      <!-- <multiselect
-        v-if="show2"
-        open-direction="bottom"
-        v-model="selected2"
-        :options="options2">
-      </multiselect> -->
     </div>
 
   </div>
@@ -33,13 +27,13 @@ export default {
   components: {
     'Multiselect': Multiselect,
   },
-  created(){
-    // debugger;
-  },
   methods:{
     mockupChoice(choice){
-
-
+    }
+  },
+  watch:{
+    selected(item){
+      this.$emit('addMockup', item)
     }
   },
   data () {

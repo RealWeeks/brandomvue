@@ -40,6 +40,14 @@ export default {
   created(){
     // debugger;
   },
+  watch:{
+    selected(item){
+      this.$emit('addBrand',item)
+    },
+    selected2(item){
+      this.$emit('addBrandAdditional',item)
+    }
+  },
   methods:{
     handleChoice(choice){
       this.show1 = false

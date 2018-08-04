@@ -3,28 +3,23 @@
     <navbar-component/>
     <div class="css-container">
       <div class="user-img">
-        <!-- <img v-if="!showForm" :src="url"/>
-        <div class="submit-area">
-          <b-button @click="revealSubmission" size="small">
-                Submit
-            </b-button>
-        </div>
-        <submit-steps v-if="showForm"/> -->
-
 
         <b-card no-body>
           <b-tabs card v-model="tabIndex">
             <b-tab title="Tab 1" :title-link-class="linkClass(0)">
-              <step-one-component/>
+              <step-one-component
+              @addBrand="addBrand"
+              @addBrandAdditional="addBrandAdditional"
+              />
             </b-tab>
             <b-tab title="Tab 2" :title-link-class="linkClass(1)">
-              <step-two-component/>
+              <step-two-component @addMockup="addMockup"/>
             </b-tab>
             <b-tab title="Tab 3" :title-link-class="linkClass(2)">
-              <step-three-component/>
+              <step-three-component @addMedium="addMedium"/>
             </b-tab>
             <b-tab title="Tab 4" :title-link-class="linkClass(3)">
-              <step-four-component/>
+              <step-four-component @addProjectname="addProjectname"/>
             </b-tab>
           </b-tabs>
         </b-card>
@@ -32,12 +27,7 @@
 
       <div class="submit">ttest</div>
       <div class="sidebar">
-        <sidebar-component/>
-        <!-- <h2></h2> -->
-        <!-- <h3>Contact Details</h3>
-        <ul>
-          <li>Linkedin</li>
-        </ul> -->
+        <sidebar-component :allSteps="allSteps" />
 
       </div>
       <div class="rightbar">
@@ -84,12 +74,28 @@ export default {
         return ['bg-light', 'text-info']
       }
     },
+    addBrand(item){
+      this.$set(this.allSteps, 'brand', item)
+    },
+    addBrandAdditional(item){
+      this.$set(this.allSteps, 'second', item)
+    },
+    addMockup(item){
+      this.$set(this.allSteps, 'mockup', item)
+    },
+    addMedium(item){
+      this.$set(this.allSteps, 'medium', item)
+    },
+    addProjectname(name){
+      this.$set(this.allSteps, 'name', name)
+    }
   },
   data () {
     return {
       showForm: false,
       url:'https://cdn.pixabay.com/photo/2016/03/09/15/10/man-1246508_1280.jpg',
       tabIndex: 0,
+      allSteps:{},
     }
   }
 }
@@ -136,7 +142,8 @@ export default {
   justify-content: flex-start;
   flex-direction: column;
   grid-area: sidebar;
-  background-color:orange;
+  /* background-color:orange; */
+  border: solid;
 }
 .rightbar{
   grid-area: rightbar;

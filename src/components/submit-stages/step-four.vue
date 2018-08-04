@@ -14,7 +14,7 @@
         <b-input-group-text slot="append">
             <strong class="text-danger">!</strong>
         </b-input-group-text>
-        <b-form-input></b-form-input>
+        <b-form-input v-model="projectName" ></b-form-input>
       </b-input-group>
       <!-- <multiselect
         v-if="show2"
@@ -34,8 +34,10 @@ export default {
   components: {
     'Multiselect': Multiselect,
   },
-  created(){
-    // debugger;
+  watch:{
+    projectName(name){
+      this.$emit('addProjectname', name)
+    },
   },
   methods:{
     mockupChoice(choice){
@@ -45,8 +47,7 @@ export default {
   },
   data () {
     return {
-        selected: null,
-        options: ['Energy Drink Can', 'Cigarette Pack', 'Software Box'],
+        projectName:'',
     }
   }
 }
