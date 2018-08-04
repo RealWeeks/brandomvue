@@ -13,6 +13,13 @@ import VueNotifications from 'vue-notifications'
 import miniToastr from 'mini-toastr'
 import VueRouter from 'vue-router'
 
+import { faDiceOne } from '@fortawesome/free-solid-svg-icons'
+import { faDiceTwo } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import Vuetify from 'vuetify'
+
 const toastTypes = {
   success: 'success',
   error: 'error',
@@ -33,7 +40,13 @@ const options = {
   warn: toast
 }
 
+library.add(faCoffee, faDiceOne, faDiceTwo)
 
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+/* eslint-disable no-new */
+
+Vue.use(Vuetify)
 Vue.use(BootstrapVue);
 Vue.use(Vuex);
 Vue.use(VueRouter)

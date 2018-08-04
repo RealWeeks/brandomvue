@@ -3,7 +3,9 @@
     <navbar-component/>
     <!-- <placeholder @emitSomething="handleEmit" :msg="msg"/> -->
     <splash-header/>
-here
+
+    <!-- <user-component/> -->
+
   </div>
 </template>
 
@@ -11,13 +13,16 @@ here
 import Navbar from './Navbar'
 import Placeholder from './Placeholder'
 import splashHeader from './splash-header'
+// import User from './user'
 
 export default {
   name: 'Brandom',
   components: {
     'navbar-component': Navbar,
     'placeholder' : Placeholder,
-    'splash-header' : splashHeader
+    'splash-header' : splashHeader,
+    // 'user-component' : User,
+
   },
   methods:{
     handleEmit(param1){

@@ -3,22 +3,39 @@
     <navbar-component/>
     <div class="css-container">
       <div class="user-img">
-        <img v-if="!showForm" :src="url"/>
+        <!-- <img v-if="!showForm" :src="url"/>
         <div class="submit-area">
           <b-button @click="revealSubmission" size="small">
                 Submit
             </b-button>
         </div>
-        <submit-steps v-if="showForm"/>
+        <submit-steps v-if="showForm"/> -->
+
+
+        <b-card no-body>
+          <b-tabs card v-model="tabIndex">
+            <b-tab title="Tab 1" :title-link-class="linkClass(0)">
+              <step-one-component/>
+            </b-tab>
+            <b-tab title="Tab 2" :title-link-class="linkClass(1)">
+              Tab Contents 2
+            </b-tab>
+            <b-tab title="Tab 3" :title-link-class="linkClass(2)">
+              Tab Contents 3
+            </b-tab>
+          </b-tabs>
+        </b-card>
       </div>
 
       <div class="submit">ttest</div>
       <div class="sidebar">
+        <sidebar-component/>
         <!-- <h2></h2> -->
-        <h3>Contact Details</h3>
+        <!-- <h3>Contact Details</h3>
         <ul>
           <li>Linkedin</li>
-        </ul>
+        </ul> -->
+
       </div>
       <div class="rightbar">
         <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/HDRI_Sample_Scene_Balls_%28JPEG-HDR%29.jpg"/>
@@ -33,25 +50,36 @@
 
 import Navbar from './Navbar'
 import submitSteps from './submit-steps'
+import sidebar from './sidebar'
+import stepOne from './submit-stages/step-one'
 
 export default {
   name: 'User',
   components: {
     'navbar-component': Navbar,
-    'submit-steps' : submitSteps
+    'submit-steps' : submitSteps,
+    'sidebar-component' : sidebar,
+    'step-one-component' : stepOne,
 
   },
   methods:{
     revealSubmission(){
       console.log('TITTY');
       this.showForm = !this.showForm
-
+    },
+    linkClass (idx) {
+      if (this.tabIndex === idx) {
+        return ['bg-primary', 'text-light']
+      } else {
+        return ['bg-light', 'text-info']
+      }
     },
   },
   data () {
     return {
       showForm: false,
-      url:'https://cdn.pixabay.com/photo/2016/03/09/15/10/man-1246508_1280.jpg'
+      url:'https://cdn.pixabay.com/photo/2016/03/09/15/10/man-1246508_1280.jpg',
+      tabIndex: 0,
     }
   }
 }
@@ -70,7 +98,7 @@ export default {
     "sidebar user user rightbar"
     "sidebar user user rightbar"
     "sidebar user user rightbar"
-    "sidebar submit submit submit"
+    "sidebar user user submit"
 }
 .user-img{
   grid-area: user;
@@ -82,9 +110,9 @@ export default {
   display: flex;
   justify-content: flex-start;
 }
-.submit-area .btn{
+/* .submit-area .btn{
   width: 100%
-}
+} */
 /* .text{
   grid-area: foo;
   background-color: red;

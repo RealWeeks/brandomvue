@@ -12,6 +12,9 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.2",
+    "@fortawesome/free-solid-svg-icons": "^5.2.0",
+    "@fortawesome/vue-fontawesome": "^0.1.1",
     "ajv": "^6.5.0",
     "axios": "^0.18.0",
     "bootstrap": "^4.1.0",
@@ -22,6 +25,7 @@
     "popper.js": "^1.14.3",
     "uiv": "^0.21.4",
     "vue": "^2.5.2",
+    "vue-multiselect": "^2.1.0",
     "vue-notifications": "^0.9.0",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
