@@ -28,6 +28,7 @@
 </template>
 
 <script>
+
 import Navbar from './Navbar'
 import submitSteps from './submit-steps'
 

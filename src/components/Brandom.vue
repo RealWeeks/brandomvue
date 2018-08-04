@@ -3,7 +3,7 @@
     <navbar-component/>
     <!-- <placeholder @emitSomething="handleEmit" :msg="msg"/> -->
     <splash-header/>
-
+here
   </div>
 </template>
 
